@@ -32,7 +32,6 @@ const chatBox = document.getElementById("chatBox");
 const chatInput = document.getElementById("chatInput");
 const sendChat = document.getElementById("sendChat");
 
-// Esperar a que window.firebaseRefs exista
 function initChat() {
     const { ref, push, onChildAdded, database } = window.firebaseRefs;
 
@@ -60,7 +59,6 @@ function initChat() {
     });
 }
 
-// Esperar a que Firebase esté listo
 setTimeout(initChat, 1000);
 
 const toggleTheme = document.getElementById("toggleTheme");
@@ -68,4 +66,3 @@ const toggleTheme = document.getElementById("toggleTheme");
 toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 });
-
