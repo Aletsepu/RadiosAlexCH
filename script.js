@@ -1,13 +1,13 @@
 // ===== Lista de radios =====
 const radios = [
-    { name: "Radio Pudahuel", url: "https://envivo.pudahuel.cl/stream" },
-    { name: "Radio Imagina", url: "https://streaming.radio.cl/imagina" },
-    { name: "Radio ADN", url: "https://envivo.adnradio.cl/stream" },
-    { name: "Radio Bio Bio", url: "https://streaming.biobiochile.cl/biobio" },
-    { name: "Radio Cooperativa", url: "https://streaming.cooperativa.cl/cooperativa" },
-    { name: "Radio Futuro", url: "https://streaming.radio.cl/futuro" },
+    { name: "Radio Pudahuel", url: "https://envivo.pudahuel.cl/" },
+    { name: "Radio Imagina", url: "https://envivo.radioimagina.cl/" },
+    { name: "Radio ADN", url: "https://envivo.adnradio.cl/" },
+    { name: "Radio Bio Bio", url: "https://www.biobiochile.cl/escritorio/bbcl-2020/secciones/radio.shtml" },
+    { name: "Radio Cooperativa", url: "https://cooperativa.cl/radioenvivo/" },
+    { name: "Radio Futuro", url: "https://envivo.futuro.cl/" },
     { name: "Radio Romántica", url: "https://streaming.radio.cl/romantica" },
-    { name: "Radio Carolina", url: "https://streaming.radio.cl/carolina" },
+    { name: "Radio Carolina", url: "https://www.carolina.cl/" },
     { name: "Radio Corazón", url: "https://streaming.radio.cl/corazon" },
     { name: "Radio Concierto", url: "https://streaming.radio.cl/concierto" }
 ];
