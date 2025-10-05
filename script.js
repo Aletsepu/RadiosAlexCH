@@ -10,22 +10,33 @@ const radios = [
     { name: "Radio Corazón", url: "https://envivo.corazon.cl/live.mp3" }
 ];
 
-// ===== Código de la radio =====
+// ===== Proxy CORS =====
+const corsProxy = "https://cors-anywhere.herokuapp.com/";
+
+// ===== Variables =====
 let currentIndex = 0;
 const player = document.getElementById("radioPlayer");
 const radioName = document.getElementById("radioName");
 
+// ===== Función para cambiar radio =====
 function changeRadio() {
     currentIndex = (currentIndex + 1) % radios.length;
-    player.src = radios[currentIndex].url;
+    player.src = corsProxy + radios[currentIndex].url;
+    radioName.textContent = radios[currentIndex].name;
+}
+
+// ===== Función para iniciar reproducción =====
+function playRadio() {
+    player.src = corsProxy + radios[currentIndex].url;
     player.play().catch(err => console.log("Error al reproducir:", err));
     radioName.textContent = radios[currentIndex].name;
 }
 
-player.src = radios[0].url;
-radioName.textContent = radios[0].name;
-
+// ===== Inicializar =====
+document.getElementById("playRadio").addEventListener("click", playRadio);
 document.getElementById("changeRadio").addEventListener("click", changeRadio);
+
+radioName.textContent = radios[0].name;
 
 // ===== Código del chat con Firebase =====
 const chatBox = document.getElementById("chatBox");
@@ -62,7 +73,6 @@ function initChat() {
 setTimeout(initChat, 1000);
 
 const toggleTheme = document.getElementById("toggleTheme");
-
 toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 });
