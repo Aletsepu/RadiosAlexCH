@@ -1,15 +1,13 @@
 // ===== Lista de radios =====
 const radios = [
-    { name: "Radio Pudahuel", url: "https://envivo.pudahuel.cl/" },
-    { name: "Radio Imagina", url: "https://envivo.radioimagina.cl/" },
-    { name: "Radio ADN", url: "https://envivo.adnradio.cl/" },
-    { name: "Radio Bio Bio", url: "https://www.biobiochile.cl/escritorio/bbcl-2020/secciones/radio.shtml" },
-    { name: "Radio Cooperativa", url: "https://cooperativa.cl/radioenvivo/" },
-    { name: "Radio Futuro", url: "https://envivo.futuro.cl/" },
-    { name: "Radio Romántica", url: "https://streaming.radio.cl/romantica" },
-    { name: "Radio Carolina", url: "https://www.carolina.cl/" },
-    { name: "Radio Corazón", url: "https://streaming.radio.cl/corazon" },
-    { name: "Radio Concierto", url: "https://streaming.radio.cl/concierto" }
+    { name: "Radio Pudahuel", url: "https://envivo.pudahuel.cl/live.mp3" },
+    { name: "Radio Imagina", url: "https://envivo.radioimagina.cl/live.mp3" },
+    { name: "Radio ADN", url: "https://envivo.adnradio.cl/live.mp3" },
+    { name: "Radio Bio Bio", url: "https://www.biobiochile.cl/media/audio/live.mp3" },
+    { name: "Radio Cooperativa", url: "https://cooperativa.cl/media/audio/live.mp3" },
+    { name: "Radio Futuro", url: "https://envivo.futuro.cl/live.mp3" },
+    { name: "Radio Carolina", url: "https://carolina.cl/media/audio/live.mp3" },
+    { name: "Radio Corazón", url: "https://envivo.corazon.cl/live.mp3" }
 ];
 
 // ===== Código de la radio =====
