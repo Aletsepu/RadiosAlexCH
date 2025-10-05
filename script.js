@@ -1,42 +1,31 @@
-// ===== Lista de radios =====
+// ===== Lista de radios con proxy CORS =====
 const radios = [
-    { name: "Radio Pudahuel", url: "https://envivo.pudahuel.cl/live.mp3" },
-    { name: "Radio Imagina", url: "https://envivo.radioimagina.cl/live.mp3" },
-    { name: "Radio ADN", url: "https://envivo.adnradio.cl/live.mp3" },
-    { name: "Radio Bio Bio", url: "https://www.biobiochile.cl/media/audio/live.mp3" },
-    { name: "Radio Cooperativa", url: "https://cooperativa.cl/media/audio/live.mp3" },
-    { name: "Radio Futuro", url: "https://envivo.futuro.cl/live.mp3" },
-    { name: "Radio Carolina", url: "https://carolina.cl/media/audio/live.mp3" },
-    { name: "Radio Corazón", url: "https://envivo.corazon.cl/live.mp3" }
+    { name: "Radio Pudahuel", url: "https://cors-anywhere.herokuapp.com/https://envivo.pudahuel.cl/live.mp3" },
+    { name: "Radio Imagina", url: "https://cors-anywhere.herokuapp.com/https://envivo.radioimagina.cl/live.mp3" },
+    { name: "Radio ADN", url: "https://cors-anywhere.herokuapp.com/https://envivo.adnradio.cl/live.mp3" },
+    { name: "Radio Bio Bio", url: "https://cors-anywhere.herokuapp.com/https://www.biobiochile.cl/media/audio/live.mp3" },
+    { name: "Radio Cooperativa", url: "https://cors-anywhere.herokuapp.com/https://cooperativa.cl/media/audio/live.mp3" },
+    { name: "Radio Futuro", url: "https://cors-anywhere.herokuapp.com/https://envivo.futuro.cl/live.mp3" },
+    { name: "Radio Carolina", url: "https://cors-anywhere.herokuapp.com/https://carolina.cl/media/audio/live.mp3" },
+    { name: "Radio Corazón", url: "https://cors-anywhere.herokuapp.com/https://envivo.corazon.cl/live.mp3" }
 ];
 
-// ===== Proxy CORS =====
-const corsProxy = "https://cors-anywhere.herokuapp.com/";
-
-// ===== Variables =====
+// ===== Código de la radio =====
 let currentIndex = 0;
 const player = document.getElementById("radioPlayer");
 const radioName = document.getElementById("radioName");
 
-// ===== Función para cambiar radio =====
 function changeRadio() {
     currentIndex = (currentIndex + 1) % radios.length;
-    player.src = corsProxy + radios[currentIndex].url;
+    player.src = radios[currentIndex].url;
+    player.play();
     radioName.textContent = radios[currentIndex].name;
 }
 
-// ===== Función para iniciar reproducción =====
-function playRadio() {
-    player.src = corsProxy + radios[currentIndex].url;
-    player.play().catch(err => console.log("Error al reproducir:", err));
-    radioName.textContent = radios[currentIndex].name;
-}
-
-// ===== Inicializar =====
-document.getElementById("playRadio").addEventListener("click", playRadio);
-document.getElementById("changeRadio").addEventListener("click", changeRadio);
-
+player.src = radios[0].url;
 radioName.textContent = radios[0].name;
+
+document.getElementById("changeRadio").addEventListener("click", changeRadio);
 
 // ===== Código del chat con Firebase =====
 const chatBox = document.getElementById("chatBox");
@@ -73,6 +62,7 @@ function initChat() {
 setTimeout(initChat, 1000);
 
 const toggleTheme = document.getElementById("toggleTheme");
+
 toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 });
