@@ -18,7 +18,7 @@ const radioName = document.getElementById("radioName");
 function changeRadio() {
     currentIndex = (currentIndex + 1) % radios.length;
     player.src = radios[currentIndex].url;
-    player.play();
+    player.play().catch(err => console.log("Error al reproducir:", err));
     radioName.textContent = radios[currentIndex].name;
 }
 
@@ -68,3 +68,4 @@ const toggleTheme = document.getElementById("toggleTheme");
 toggleTheme.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
 });
+
